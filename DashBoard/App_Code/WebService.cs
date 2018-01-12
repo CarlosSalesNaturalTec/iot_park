@@ -19,6 +19,84 @@ public class WebService : System.Web.Services.WebService
         return "Aleluia";
     }
 
+    [WebMethod]
+    public string Dispositivo_Salvar(string param0, string param1, string param2)
+    {
+        string url;
+        string strInsert = "INSERT INTO Tbl_Devices (" +
+            "Descricao ," +
+            "ID_Principal ," +
+            "ID_Secundario " +
+            ") VALUES (" +
+            "'" + param0 + "'," +
+            "'" + param1 + "'," +
+            "'" + param2 + "'" +
+            ")";
+
+        OperacaoBanco operacao = new OperacaoBanco();
+        bool inserir = operacao.Insert(strInsert);
+        ConexaoBancoSQL.fecharConexao();
+        if (inserir == true)
+        {
+            url = "Dispositivos_Listagem.aspx";
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+    }
+
+    [WebMethod]
+    public string Dispositivo_Excluir(string param1)
+    {
+        string url;
+
+        OperacaoBanco operacao3 = new OperacaoBanco();
+        Boolean deletar = operacao3.Delete("delete from Tbl_Devices where ID_Device=" + param1);   
+        ConexaoBancoSQL.fecharConexao();
+
+        if (deletar == true)
+        {
+            url = "Dispositivos_Listagem.aspx";  
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+    }
+
+    [WebMethod]
+    public string Dispositivo_Alterar(string param0, string param1, string param2, string param3)
+    {
+        string url;
+        OperacaoBanco operacao = new OperacaoBanco();
+        bool alterar = operacao.Update("update Tbl_Devices set " +
+            "Descricao = '" + param0 + "'," +
+            "ID_Principal = '" + param1 + "', " +
+            "ID_Secundario = '" + param2 + "' " +
+            "where ID_Device  = " + param3);
+        ConexaoBancoSQL.fecharConexao();
+
+        if (alterar == true)
+        {
+            url = "Dispositivos_Listagem.aspx";
+        }
+        else
+        {
+            url = "Sorry.aspx";
+        }
+
+        return url;
+
+
+
+    }
+
+
 }
 
 public class ConexaoBancoSQL

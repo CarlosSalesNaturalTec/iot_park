@@ -20,7 +20,7 @@
 
     <style>
         body {
-            background-image: url("Images/fundo1.png");
+            background-image: url("Images/fundo2.jpg");
         }
     </style>
 

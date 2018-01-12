@@ -8,7 +8,7 @@ function ExcluirRegistro() {
 
     $.ajax({
         type: "POST",
-        url: "WebService.asmx/TurmasExcluir",
+        url: "WebService.asmx/Dispositivo_Excluir",
         data: '{param1: "' + idRegistro + '" }',
         contentType: "application/json; charset=utf-8",
         dataType: "json",

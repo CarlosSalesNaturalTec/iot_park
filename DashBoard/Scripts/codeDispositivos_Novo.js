@@ -4,7 +4,7 @@ function SalvarRegistro() {
 
     //validações
     if (document.getElementById('input_nome').value == "") {
-        alert("Informe DEscrição do Dispositivo");
+        alert("Informe Descrição do Dispositivo");
         openLink(event, 'grupo1')
         $('#bt1').addClass(' w3-blue');
         document.getElementById("input_nome").focus();
@@ -18,34 +18,15 @@ function SalvarRegistro() {
         strLine = strLine + "param" + i + ":'" + x[i].value + "',";
     }
 
-    //Combo Curso
-    var combo1 = document.getElementById("input_curso")
-    var combo2 = combo1.options[combo1.selectedIndex].value;    //ID
-    strLine = strLine + "param" + i + ":'" + combo2 + "',";
-    i++;
-    var combo3 = combo1.options[combo1.selectedIndex].text;     //Nome
-    strLine = strLine + "param" + i + ":'" + combo3 + "',";
-
-    //Combo Salas
-    i++;
-    var combo1 = document.getElementById("input_sala")
-    var combo2 = combo1.options[combo1.selectedIndex].value;    //ID
-    strLine = strLine + "param" + i + ":'" + combo2 + "',";
-    i++;
-    var combo3 = combo1.options[combo1.selectedIndex].text;     //Nome
-    strLine = strLine + "param" + i + ":'" + combo3 + "',";
-
-    //id isntituição
-    i++;
-    var idInst = document.getElementById('IDInstHidden').value;
-    strLine = strLine + "param" + i + ":'" + idInst + "'";
+    // retira ultima virgula da string recem formada
+    strLine = strLine.substring(0, strLine.length - 1);
 
     //exibir animações - aguarde...
     UIAguardar();
 
     $.ajax({
         type: "POST",
-        url: "WebService.asmx/TurmasSalvar",
+        url: "WebService.asmx/Dispositivo_Salvar",
         data: '{' + strLine + '}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -62,7 +43,7 @@ function AlterarRegistro() {
 
     //validações
     if (document.getElementById('input_nome').value == "") {
-        alert("Informe Nome da Turma");
+        alert("Informe Descrição do Dispositivo");
         openLink(event, 'grupo1')
         $('#bt1').addClass(' w3-blue');
         document.getElementById("input_nome").focus();
@@ -76,34 +57,17 @@ function AlterarRegistro() {
         strLine = strLine + "param" + i + ":'" + x[i].value + "',";
     }
 
-    //Combo Curso
-    var combo1 = document.getElementById("input_curso")
-    var combo2 = combo1.options[combo1.selectedIndex].value;    //ID
-    strLine = strLine + "param" + i + ":'" + combo2 + "',";
-    i++;
-    var combo3 = combo1.options[combo1.selectedIndex].text;     //Nome
-    strLine = strLine + "param" + i + ":'" + combo3 + "',";
-
-    //Combo 
-    i++;
-    var combo1 = document.getElementById("input_sala")
-    var combo2 = combo1.options[combo1.selectedIndex].value;    //ID
-    strLine = strLine + "param" + i + ":'" + combo2 + "',";
-    i++;
-    var combo3 = combo1.options[combo1.selectedIndex].text;     //Nome
-    strLine = strLine + "param" + i + ":'" + combo3 + "',";
-
-    //id instituição
-    i++;
-    var vID = document.getElementById("IDHidden").value;
+    // id dispositivo
+    var vID = document.getElementById("IDAuxHidden").value;    
     strLine = strLine + "param" + i + ":'" + vID + "'";
+
 
     //exibir animações - aguarde...
     UIAguardar();
 
     $.ajax({
         type: "POST",
-        url: "WebService.asmx/TurmasAlterar",
+        url: "WebService.asmx/Dispositivo_Alterar",
         data: '{' + strLine + '}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -119,7 +83,7 @@ function AlterarRegistro() {
 
 
 function cancelar() {
-    var linkurl = "Turmas_Listagem.aspx";
+    var linkurl = "Dispositivos_Listagem.aspx";
     window.location.href = linkurl;
 }
 
@@ -136,18 +100,3 @@ function UIAguardar() {
         x[i].style.display = "block";
     }
 }
-//Menu
-function openLink(evt, animName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("grupo");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" w3-blue", "");
-    }
-    document.getElementById(animName).style.display = "block";
-    evt.currentTarget.className += " w3-blue";
-}
-//Menu

@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Dispositivos_Novo.aspx.cs" Inherits="Dispositivos_Novo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Dispositivos_Ficha.aspx.cs" Inherits="Dispositivos_Ficha" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>Cadastro de Novo Dispositivo</title>
+    <title>Ficha de Dispositivo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -31,7 +31,7 @@
 
     <div id="grupo1" class="w3-container grupo w3-animate-left" style="display: block">
 
-        <h3><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Novo Dispositivo</h3>
+        <h3><i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Ficha de Dispositivo</h3>
         <hr />
 
         <div class="w3-rest">
@@ -68,7 +68,7 @@
                         <button class="w3-btn w3-round w3-border w3-light-blue w3-hover-blue btcontroles" onclick="cancelar()">
                             <i class="fa fa-undo" aria-hidden="true"></i>&nbsp;Sair</button>
 
-                        <button class="w3-btn w3-round w3-border w3-light-blue w3-hover-blue btcontroles" onclick="SalvarRegistro()">
+                        <button class="w3-btn w3-round w3-border w3-light-blue w3-hover-blue btcontroles" onclick="AlterarRegistro()">
                             <i class="fa fa-check-square-o" aria-hidden="true"></i>&nbsp;Salvar&nbsp;&nbsp;
                         </button>
 
@@ -79,6 +79,10 @@
 
         </div>
     </div>
+
+    <!-- auxiliares -->
+    <input id="IDAuxHidden" type="hidden" />
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
 
     <!-- Scripts Diversos  -->
     <script type="text/javascript" src="Scripts/codeDispositivos_Novo.js"></script>

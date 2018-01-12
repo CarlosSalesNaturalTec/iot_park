@@ -28,6 +28,8 @@
     <div>
         <div class="w3-bar w3-black">
 
+            <a href="Mensagens_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbspMensagens</a>
+
             <a href="Dispositivos_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbsp;Dispositivos</a>
 
             <a href="Home.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbsp;Home</a>
