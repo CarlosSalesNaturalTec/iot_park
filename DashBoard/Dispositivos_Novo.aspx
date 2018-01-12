@@ -20,7 +20,7 @@
 
     <style>
         body {
-            background-image: url("Images/fundo2.jpg");
+            background-image: url("Images/fundo-azul.jpg");
             background-repeat: repeat;
             height: 100%;
         }

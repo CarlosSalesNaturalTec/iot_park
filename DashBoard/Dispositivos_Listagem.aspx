@@ -21,14 +21,14 @@
 
     <style> 
         body {
-            background-image: url("Images/fundo2.jpg"); 
+            background-image: url("Images/fundo-azul.jpg"); 
         }
     </style>
 
 </head>
 <body>
     <p></p>
-    <div class="w3-container w3-border w3-round w3-padding-16 w3-light-blue" style="margin-left: 2%; margin-right: 2%">
+    <div class="w3-container w3-border w3-round w3-padding-16" style="margin-left: 2%; margin-right: 2%">
         <small><i class="fa fa-calendar-check-o fa-2x"></i>&nbsp;&nbsp;Total de Dispositivos Cadastrados:
             <asp:Literal ID="lblTotalRegistros" runat="server"></asp:Literal></small> 
         &nbsp;&nbsp;
@@ -38,7 +38,7 @@
     <br />
 
 
-    <div class="w3-container w3-border w3-round w3-padding-16 w3-light-gray w3-small" style="margin-left: 2%; margin-right: 2%">
+    <div class="w3-container w3-border w3-round w3-padding-16 w3-small" style="margin-left: 2%; margin-right: 2%">
         <!-- Planilha  -->
         <asp:Literal ID="Literal1" runat="server"></asp:Literal>
         <!-- Planilha  -->

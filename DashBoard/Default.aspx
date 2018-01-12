@@ -28,11 +28,11 @@
     <div>
         <div class="w3-bar w3-black">
 
-            <a href="Mensagens_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbspMensagens</a>
+            <a href="Mensagens_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-barcode"></i>&nbspMensagens</a>
 
-            <a href="Dispositivos_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbsp;Dispositivos</a>
+            <a href="Dispositivos_Listagem.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-link"></i>&nbsp;Dispositivos</a>
 
-            <a href="Home.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-home"></i>&nbsp;Home</a>
+            <a href="Dashboard.aspx" target="iframe" class="w3-bar-item w3-btn w3-hover-blue w3-right"><i class="fa fa-desktop"></i>&nbspPainel</a>
 
             <div class="w3-left">
                 <h6 class="w3-small" style="margin-left: 14px">
@@ -45,7 +45,7 @@
 
     <!-- page content -->
     <div>
-        <iframe src="Home.aspx" width="100%" height="683px" frameborder="0" name="iframe">Atualize seu Navegador!</iframe>
+        <iframe src="Dashboard.aspx" width="100%" height="800px" frameborder="0" name="iframe">Atualize seu Navegador!</iframe>
     </div>
     <!-- page content -->
 

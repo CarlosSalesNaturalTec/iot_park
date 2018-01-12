@@ -19,16 +19,16 @@ public partial class Mensagens_Listagem : System.Web.UI.Page
 
     private void montaCabecalho()
     {
-        string stringcomaspas = "<table id=\"tabela\" class=\"table table-striped table-hover \">" +
+        string stringcomaspas = "<table id=\"tabela\" class=\"table table-hover \">" +
             "<thead>" +
             "<tr>" +
             "<th>SEQUENCIAL</th>" +
             "<th>DATA/HORA</th>" +
+            "<th>MENSAGEM</th>" +
             "<th>ID PRINCIPAL</th>" +
             "<th>ESTAÇÃO</th>" +
             "<th>SNR</th>" +
             "<th>AVGSGN</th>" +
-            "<th>MENSAGEM</th>" +
             "</tr>" +
             "</thead>" +
             "<tbody>";
@@ -39,7 +39,7 @@ public partial class Mensagens_Listagem : System.Web.UI.Page
     private void dadosCorpo()
     {
 
-        string stringselect = "select ID_mensagem , DataMensagem  , ID_Device  , Estacao, Snr , avgSgn , Mensagem  " +
+        string stringselect = "select ID_mensagem , DataMensagem  , Mensagem, ID_Device  , Estacao, Snr , avgSgn  " +
                 "from tbl_mensagens " +
                 "order by ID_mensagem";
 
@@ -57,6 +57,7 @@ public partial class Mensagens_Listagem : System.Web.UI.Page
             string Coluna6 = Convert.ToString(dados[6]);
 
             string stringcomaspas = "<tr>" +
+                "<td>" + Coluna0 + "</td>" +
                 "<td>" + Coluna1 + "</td>" +
                 "<td>" + Coluna2 + "</td>" +
                 "<td>" + Coluna3 + "</td>" +
